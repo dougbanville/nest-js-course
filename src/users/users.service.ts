@@ -15,6 +15,9 @@ export class UsersService {
 
   findOne(id: number) {
     //Use a method from our repository
+    if (!id) {
+      return null;
+    }
     return this.repo.findOneBy({ id });
   }
 
